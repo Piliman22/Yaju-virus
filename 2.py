@@ -30,6 +30,9 @@ def play_sound():
 
 def show_image():
     window = tk.Toplevel()  # 新しいウィンドウを作成
+    window.title("野獣先輩")  # タイトルを設定
+    window.iconbitmap('sad.jpg')  # アイコンを設定
+    
     img = Image.open(image_path)
     img_tk = ImageTk.PhotoImage(img)
     
@@ -49,7 +52,7 @@ def show_image():
     
     window.geometry(f'{window_width}x{window_height}+{random_x}+{random_y}')
     
-    window.after(250, show_image)  # 1秒後に再度この関数を呼び出す
+    window.after(175, show_image) 
 
 # 音声再生を別スレッドで実行
 sound_thread = threading.Thread(target=play_sound)
